@@ -2,6 +2,7 @@
 TASKS
 
 The tasks assigned to this project are to help achieve the following objectives:
+
 	1.Understand what are lists and how to use them
 
 	2.The differences and similarities between lists and strings
