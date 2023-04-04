@@ -1,0 +1,43 @@
+This module defines a function "text_indentation(text)" that prints a text
+
+import method to test
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+SUCCESSFUL TESTS:
+	>>> text_indentation("How are you?")
+	How are you?
+	<BLANKLINE>
+
+	>>> text_indentation("  How have you been?")
+	How have you been?
+	<BLANKLINE>
+
+	>>> text_indentation("Have you been doing well.  ")
+	Have you been doing well.
+	<BLANKLINE>
+
+	>>> text_indentation("     ")
+
+	>>> text_indentation("  Mercy went to school.   But forgot her school bag.   ")
+	Mercy went to school.
+	<BLANKLINE>
+	But forgot her school bag.
+	<BLANKLINE>
+
+	>>> text_indentation("Here is a \nlist of items to buy: sugar.cocoa")
+	Here is a
+	list of items to buy:
+	<BLANKLINE>
+	sugar.
+	<BLANKLINE>
+	cocoa
+
+FAILED TESTS:
+Test with non-string datatypes
+	>>> text_indentation(5)
+	Traceback (most recent call last):
+	TypeError: text must be a string
+
+	>>> text_indentation(None)
+	Traceback (most recent call last):
+	TypeError: text must be a string
