@@ -1,0 +1,47 @@
+This module defines a function "print_square(size)" that prints a square
+
+import method to test
+>>> print_square = __import__('4-print_square').print_square
+
+SUCCESSFUL TESTS:
+Test with int that is > 0
+	>>> print_square(1)
+	#
+
+	>>> print_square(4)
+	####
+	####
+	####
+	####
+
+Test with size == 0
+	>>> print_square(0)
+
+FAILED TESTS:
+Test using non-int parameters
+	>>> print_square("5")
+	Traceback (most recent call last):
+	TypeError: size must be an integer
+
+	>>> print_square(1.5)
+	Traceback (most recent call last):
+        TypeError: size must be an integer
+
+	>>> print_square(None)
+	Traceback (most recent call last):
+        TypeError: size must be an integer
+
+Test with int < 0
+	>>> print_square(-5)
+	Traceback (most recent call last):
+	ValueError: size must be >= 0
+
+Test with more than one parameter
+	>>> print_square(0, 1)
+	Traceback (most recent call last):
+	TypeError: print_square() takes 1 positional argument but 2 were given
+
+Test with an empty arg
+	>>> print_square()
+	Traceback (most recent call last):
+	TypeError: print_square() missing 1 required positional argument: 'size'
