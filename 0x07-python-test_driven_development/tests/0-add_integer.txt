@@ -1,0 +1,52 @@
+This module defines the addition of two integers using method "add_integer(a, b=98)"
+
+import method to test
+>>> add_integer = __import__('0-add_integer').add_integer
+
+SUCCESSFUL TESTS:
+	>>> print(add_integer(0, 1))
+	1
+	>>> print(add_integer(1, 2))
+	3
+	>>> print(add_integer(3, 4))
+	7
+
+Note that arguments of type float are casted to integers before adding
+	>>> print(add_integer(1.0, 2.0))
+	3
+	>>> print(add_integer(1.5, 3.5))
+	4
+
+Default value: b=98
+	>>> print(add_integer(2))
+	100
+
+FAILED TESTS:
+	>>> print(add_integer("1", 2))
+	Traceback (most recent call last):
+	TypeError: a must be an integer
+
+	>>> print(add_integer(3, "5"))
+	Traceback (most recent call last):
+	TypeError: b must be an integer
+
+More tests:
+Test with more args:
+	>>> print(add_integer(1, 2, 3))
+	Traceback (most recent call last):
+	TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
+
+Test when both arguments are non-integers and non-floats
+	>>> print(add_integer("hello", "world"))
+	Traceback (most recent call last):
+        TypeError: a must be an integer
+
+Use infinity as an argument
+	>>> print(add_integer(float("inf")))
+	Traceback (most recent call last):
+	OverflowError: cannot convert float infinity to integer
+
+Test with NaN numbers(special float in Python - not a number)
+	>>> print(add_integer(float("NaN")))
+	Traceback (most recent call last):
+	ValueError: cannot convert float NaN to integer
