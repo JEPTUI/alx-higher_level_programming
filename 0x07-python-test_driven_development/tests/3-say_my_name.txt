@@ -1,0 +1,40 @@
+This module prints first and last name using function "say_my_name(first_name, last_name="")"
+
+import method to test
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+SUCCESSFUL TESTS
+	>>> say_my_name("Alice", "Kiptui")
+	My name is Alice Kiptui
+
+Test with more than one last name or first name
+	>>> say_my_name("Alice Jeptui", "Kiptui Kale")
+	My name is Alice Jeptui Kiptui Kale
+
+Test with no last name provided
+	>>> say_my_name("Alice")
+	My name is Alice
+
+FAILED TESTS:
+Test with non-string types parameters
+	>>> say_my_name(65, "Kale")
+	Traceback (most recent call last):
+	TypeError: first_name must be a string
+
+	>>> say_my_name("Alice", [675, 45])
+	Traceback (most recent call last):
+	TypeError: last_name must be a string
+
+Test with more than two strings
+	>>> say_my_name("John", "Marie", "Osuo")
+	Traceback (most recent call last):
+	TypeError: say_my_name() takes from 1 to 2 positional arguments but 3 were given
+
+Test with empty string
+	>>> say_my_name(None)
+	Traceback (most recent call last):
+	TypeError: first_name must be a string
+
+	>>> say_my_name()
+	Traceback (most recent call last):
+	TypeError: say_my_name() missing 1 required positional argument: 'first_name'
