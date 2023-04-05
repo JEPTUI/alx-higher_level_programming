@@ -73,8 +73,8 @@ def nqueens_solve(board, row, queens, solutions):
             tmp_board[row][c] = "Q"
             xout(tmp_board, row, c)
             if row < n-1:
-                solutions = nqueens_solve
-                (tmp_board, row+1, queens+1, solutions)
+                solutions = nqueens_solve(
+                        tmp_board, row+1, queens+1, solutions)
             else:
                 solutions.append(print_solution(tmp_board))
 
