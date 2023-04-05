@@ -19,9 +19,11 @@ def queen_board(n):
     board = [[' ' for j in range(n)] for i in range(n)]
     return board
 
+
 def board_safe(board):
     """Return a copy of a chessboard."""
     return [row.copy() for row in board]
+
 
 def print_solution(board):
     """Return the list of lists representation of a solved chessboard."""
@@ -32,6 +34,7 @@ def print_solution(board):
                 solution.append([r, c])
                 break
     return solution
+
 
 def xout(board, row, col):
     """X out spots on a chessboard.
@@ -49,6 +52,7 @@ def xout(board, row, col):
         board[r][c] = "x"
     for r in range(row+1, n):
         board[r][col] = "x"
+
 
 def nqueens_solve(board, row, queens, solutions):
     """Recursively solve an N-queens puzzle.
@@ -69,11 +73,13 @@ def nqueens_solve(board, row, queens, solutions):
             tmp_board[row][c] = "Q"
             xout(tmp_board, row, c)
             if row < n-1:
-                solutions = nqueens_solve(tmp_board, row+1, queens+1, solutions)
+                solutions = nqueens_solve
+                (tmp_board, row+1, queens+1, solutions)
             else:
                 solutions.append(print_solution(tmp_board))
 
     return solutions
+
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
