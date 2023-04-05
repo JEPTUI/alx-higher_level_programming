@@ -1,0 +1,59 @@
+This module defines a function "matrix_mul(m_a, m_b)" that multiplies two matrices
+
+import this method to test
+>>> matrix_mul = __import__('100-matrix_mul').matrix_mul
+
+SUCCESSFUL TESTS:
+Test with integer values
+	>>> m_a = [[1, 2], [3, 4]]
+	>>> m_b = [[1, 2], [3, 4]]
+	>>> print(matrix_mul(m_a, m_b))
+	[[7, 10], [15, 22]]
+
+	>>> m_a = [[1, 2]]
+	>>> m_b = [[3, 4], [5, 6]]
+	>>> print(matrix_mul(m_a, m_b))
+	[[13, 16]]
+
+Test with floating values
+	>>> m_a = [[1.2, 5.5, 6.2], [4.66, 12.3, -9.2]]
+	>>> m_b = [[5.0, 3.3], [-2.9, 4.4], [7.2, 4.4]]
+	>>> print(matrix_mul(m_a, m_b))
+	[[34.69, 55.44000000000001], [-78.61, 29.018000000000008]]
+
+FAILED TESTS:
+Test with an empty matrix
+	>>> print(matrix_mul([], [[2, 0], [1, 2]]))
+	Traceback (most recent call last):
+	ValueError: m_a can't be empty
+
+	>>> print(matrix_mul([[2, 0], [1, 2]], [[]]))
+	Traceback (most recent call last):
+	ValueError: m_b can't be empty
+
+Test with different sizes of rows and columns
+	>>> m_a = [[1, 2], [3, 4],]
+	>>> m_b = [[1, 2], [2, 3], [4, 5]]
+	>>> print(matrix_mul(m_a, m_b))
+	Traceback (most recent call last):
+	ValueError: m_a and m_b can't be multiplied
+
+Test different sized lists in matrix:
+	>>> m_a = [[1, 2], [1, 2]]
+	>>> m_b = [[1, 2], [1, 2, 3, 4]]
+	>>> print(matrix_mul(m_a, m_b))
+	Traceback (most recent call last):
+	TypeError: each row of m_b must should be of the same size
+
+Test with non-integers and non-floats
+	>>> m_a = [["6"], ["3"]]
+	>>> m_b = [["1"], ["4"]]
+	>>> print(matrix_mul(m_a, m_b))
+	Traceback (most recent call last):
+	TypeError: m_a should contain only integers or floats
+
+	>>> m_a = (0, 1)
+	>>> m_b = [[1, 2], [2, 3]]
+	>>> print(matrix_mul(m_a, m_b))
+	Traceback (most recent call last):
+	TypeError: m_a must be a list
