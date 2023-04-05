@@ -19,7 +19,7 @@ class Rectangle:
         """
         self.width = width
         self.height = height
-        tyupe(self).number_of_instances += 1
+        type(self).number_of_instances += 1
 
     def __del__(self):
         """
