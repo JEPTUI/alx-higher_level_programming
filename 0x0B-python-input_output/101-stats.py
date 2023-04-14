@@ -23,6 +23,7 @@ def print_stats(size, stat_codes):
         if j:
             print("{:s}: {:d}".format(i, j))
 
+
 def parse_stdin_and_compute():
     size = 0
     counts = 0
@@ -41,5 +42,6 @@ def parse_stdin_and_compute():
         print_stats(size, stat_codes)
         raise
     print_stats(size, stat_codes)
+
 
 parse_stdin_and_compute()
