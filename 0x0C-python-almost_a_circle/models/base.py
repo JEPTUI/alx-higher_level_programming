@@ -8,6 +8,7 @@ import json
 import csv
 import turtle
 
+
 class Base:
     """
     Defines a class Base that represents base for all the other classes
