@@ -9,6 +9,18 @@ import os
 from models.base import Base
 from models.rectangle import Rectangle
 from models.square import Square
+import pep8
+
+
+class TestPep8(unittest.TestCase):
+    """Pep8 model that validates unittest"""
+
+    def test_pep8(self):
+        style = pep8.StyleGuide(quiet=False)
+        errors = 0
+        files = ["models/base.py", "tests/test_models/test_base.py"]
+        errors += style.check_files(files).total_errors
+        self.assertEqual(errors, 0, 'Need to fix Pep8')
 
 
 class TestBase(unittest.TestCase):

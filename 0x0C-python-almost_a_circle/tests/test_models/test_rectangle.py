@@ -9,6 +9,18 @@ import unittest
 from contextlib import redirect_stdout
 from models.base import Base
 from models.rectangle import Rectangle
+import pep8
+
+
+class TestPep8(unittest.TestCase):
+    """Pep8 model validates unittest"""
+
+    def test_pep8(self):
+        style = pep8.StyleGuide(quiet=False)
+        errors = 0
+        files = ["models/rectangle.py", "tests/test_models/test_rectangle.py"]
+        errors += style.check_files(files).total_errors
+        self.assertEqual(errors, 0, 'Need to fix Pep8')
 
 
 class TestRectangle(unittest.TestCase):
