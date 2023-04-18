@@ -64,7 +64,7 @@ class TestRectangle(unittest.TestCase):
             print(Rectangle.__x)
             print(Rectangle.__y)
 
-    #Test given arguments
+    # Test given arguments
     def test_invalid_args(self):
         """Test too many args raises error"""
         with self.assertRaises(TypeError):
@@ -75,12 +75,12 @@ class TestRectangle(unittest.TestCase):
             Rectangle()
             Rectangle(None)
 
-    #Test class defined
+    # Test class defined
     def test_class(self):
         """Test created class is class  Rectangle"""
         self.assertEqual(type(Rectangle(1, 2)), Rectangle)
 
-    #Test methods
+    # Test methods
     def test_area(self):
         """Test method: area"""
         self.assertEqual(Rectangle(3, 4).area(), 12)
@@ -141,6 +141,7 @@ class TestRectangle(unittest.TestCase):
         rect2 = Rectangle(10, 10)
         rect2.update(**rdic)
         self.assertEqual(str(rect2), '[Rectangle] (5) 3/4 - 1/2')
+
 
 if __name__ == "__main__":
     unittest.main()
