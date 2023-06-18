@@ -3,6 +3,7 @@
 takes in an argument and displays all values in the states
 table of hbtn_0e_0_usa where name matches the argument.
 """
+
 import MySQLdb
 from sys import argv
 
@@ -18,10 +19,11 @@ if __name__ == "__main__":
     # create cursor object
     cursor = db.cursor()
     # create a query with user input
-    query = "SELECT * FROM states WHERE name = %s ORDER BY id ASC"
-    parameters = (argv[4],)
+    query = """SELECT *
+    FROM states
+    WHERE name LIKE '{:s}' ORDER BY id ASC""".format(argv[4])
     # execute query
-    cursor.execute(query, parameters)
+    cursor.execute(query)
     # fetch all rows
     rows = cursor.fetchall()
     # print results
