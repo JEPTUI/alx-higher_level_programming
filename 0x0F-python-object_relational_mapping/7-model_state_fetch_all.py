@@ -23,7 +23,7 @@ if __name__ == "__main__":
     states = session.query(State).order_by(State.id.asc()).all()
     # print results
     for state in states:
-        print(state.id, state.name)
+        print("{:d}: {:s}".format(state.id, state.name))
 
     # close session
     session.close()
