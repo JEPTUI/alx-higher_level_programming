@@ -8,17 +8,18 @@ request(apiUrl, (err, response, body) => {
   if (err) {
     console.log(err);
   } else if (response.statusCode === 200) {
-    const movie = JSON.parse(body);
-    for (const i in movie.characters) {
-      request(movie.characters[i], (err, response, body) => {
-        if (err) {
-          console.log(err);
-        } else if (response.statusCode === 200) {
-          console.log(JSON.parse(body).name);
-        }
-      });
-    }
-  } else {
-    console.log('Erorr Code:' + response.statusCode);
+    const characters = JSON.parse(body).characters;
+    printCharacters(characters, 0);
   }
 });
+
+function printCharacters (characters, index) {
+  request(characters[index], (err, response, body) => {
+    if (!err) {
+      console.log(JSON.parse(body).name);
+      if (index + 1 < characters.length) {
+        printCharacters(characters, index + 1);
+      }
+    }
+  });
+}
